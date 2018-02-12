@@ -1,0 +1,32 @@
+<!DOCTYPE html> <html lang=pl> <head> <meta charset=UTF-8> <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"> <meta http-equiv=X-UA-Compatible content="ie=edge"> <title>Name The Song Quiz | Gametroleum</title> <meta name=format-detection content="telephone=no"> <link rel=stylesheet href=resources/milligram.min.css> <link rel=stylesheet href=resources/main.css> </head> <body> <main class=wrapper> <nav class=navigation> <section class=container> <h1 class=title> <a class=navigation-title href=./English.html> Name The Song Quiz | </a> <a class=navigation-title href=./Polski.html> Gametroleum </a> </h1> <ul class="navigation-list float-right"> <li class=navigation-item><a class=navigation-link href=./English.html data-popover>English</a></li> <li class=navigation-item><a class=navigation-link href=./Polski.html data-popover>Polski</a></li> </ul> </section> </nav> <section class=container> <h1 id=instrukcja>Instrukcja</h1> <h2 id=sterowanie>Sterowanie</h2> <p>Polecamy do sterowania używać gamepadów. Dodatkowo 2 graczy może grać używając klawiatury.</p> <h3 id=gamepad>Gamepad</h3> <p>Tutaj znajduje się lista wspieranych gamepadów: <a href=https://guavaman.com/projects/rewired/docs/SupportedControllers.html>https://guavaman.com/projects/rewired/docs/SupportedControllers.html</a></p> <p>Dwóch graczy może grać jednocześnie używając jednego gamepada.</p> <p><img src=./images/Gamepad.png alt="Annotated Gamepad"></p> <p>Między opcjami poruszamy się gałką (Left Stick albo Right Stick).</p> <p>Potwierdzamy &quot;Action Button 01&quot; albo &quot;D-Pad Down&quot;.</p> <p>Zgłaszamy się do odpowiedzi używając LB lub LT w przypadku gracza po lewej stronie albo RT lub RB w przypadku gracza z prawej strony.</p> <h3 id=klawiatura>Klawiatura</h3> <p>Między opcjami poruszamy się WSAD albo strzałkami.</p> <p>Potwierdzamy &quot;E&quot; albo &quot;Enter&quot;.</p> <p>Zgłaszamy się do odpowiedzi używając WSAD w przypadku pierwszego gracza albo dowolnej strzałki w przypadku drugiego gracza.</p> <h2 id=przygotowanie-plik-w-muzycznych>Przygotowanie Plików muzycznych</h2> <p>Pliki muzyczne można przygotować na dwa sposoby. Pliki muszą być w formacje mp3, aiff lub wav; Format jest rozpoznawany po rozszerzeniu pliku. </p> <h3 id=spos-b-1-nazwy-plik-w>Sposób 1 - nazwy plików</h3> <p>Nazywać pliki z muzyką w formie <code>nazwa_artysty-nazwa_piosenki.mp3</code>; Na przykład: <code>Jennifer_Lopez-On_The_Floor.mp3</code>; Następnie wskazać w grze folder z tak nazwanymi plikami.</p> <h3 id=spos-b-2-plik-konfiguracyjny>Sposób 2 - plik konfiguracyjny</h3> <p>Jeżeli z jakiegoś powodu nie możemy albo nie chcemy zmieniać nazwy plików można przygotować specjalny plik konfiguracyjny który dostarczy informacje o plikach. Plik powinien może dowolną nazwę i musi mieć rozszerzenie .jgms; Na przykład: <code>SongManifest.jgms</code>.</p> <p>Plik powinien wyglądać tak:</p> <pre><code>{
+  &quot;Songs&quot;: [
+  {
+    &quot;Path&quot;: &quot;C:\\Music\MojaNazwaPliku.hello&quot;,
+    &quot;SongName&quot;: &quot;S.O.S&quot;,
+    &quot;ArtistName&quot;: &quot;Abba&quot;,
+    &quot;Type&quot;: &quot;WAV&quot;
+  },
+  {
+    &quot;Path&quot;: &quot;C:\\Music\PodFolder\001-Adam_Stachowiak-Wracam_co_noc.mp3&quot;,
+    &quot;SongName&quot;: &quot;Wracam co noc&quot;,
+    &quot;ArtistName&quot;: &quot;Adam Stachowiak&quot;
+  }
+  ]
+}
+</code></pre><p><code>Path</code> - Ścieżka do pliku z muzyką.</p> <p><code>SongName</code> - Nazwa muzyki.</p> <p><code>ArtistName</code> - Nazwa wykonawcy, autora lub zespołu. </p> <p><code>Type</code> - Format muzyki jest wnioskowany na podstawie rozszerzenia pliku. Pole <code>Type</code> jest opcjonalne gdy plik ma rozszerzenie <code>.mp3</code>, <code>.wav</code> lub <code>.aiff</code>; W przypadku gdy plik nie ma rozszerzenia lub rozszerzenie jest innie niż <code>.mp3</code>, <code>.wav</code> lub <code>.aiff</code> należy zdefiniować <code>Type</code>. <code>Type</code> może przyjąć wartość <code>WAV</code>, <code>MP3</code> lub <code>AIFF</code>.</p> <p>Dodatkowo można zdefiniować pole <code>RootPath</code> np:</p> <pre><code>{
+  &quot;RootPath&quot;: &quot;C:\\Music&quot;,
+  &quot;Songs&quot;: [
+  {
+    &quot;Path&quot;: &quot;MojaNazwaPliku.hello&quot;,
+    &quot;SongName&quot;: &quot;S.O.S&quot;,
+    &quot;ArtistName&quot;: &quot;Abba&quot;,
+    &quot;Type&quot;: &quot;WAV&quot;
+  },
+  {
+    &quot;Path&quot;: &quot;PodFolder\001-Adam_Stachowiak-Wracam_co_noc.mp3&quot;,
+    &quot;SongName&quot;: &quot;Wracam co noc&quot;,
+    &quot;ArtistName&quot;: &quot;Adam Stachowiak&quot;
+  }
+  ]
+}
+</code></pre><p>Co powoduje, że w polu Path można podać ścieżkę względną do ścieżki z pola <code>RootPath</code> </p> </section> </main> 

@@ -1,0 +1,32 @@
+<!DOCTYPE html> <html lang=en> <head> <meta charset=UTF-8> <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"> <meta http-equiv=X-UA-Compatible content="ie=edge"> <title>Name The Song Quiz | Gametroleum</title> <meta name=format-detection content="telephone=no"> <link rel=stylesheet href=resources/milligram.min.css> <link rel=stylesheet href=resources/main.css> </head> <body> <main class=wrapper> <nav class=navigation> <section class=container> <h1 class=title> <a class=navigation-title href=./English.html> Name The Song Quiz | </a> <a class=navigation-title href=./Polski.html> Gametroleum </a> </h1> <ul class="navigation-list float-right"> <li class=navigation-item><a class=navigation-link href=./English.html data-popover>English</a></li> <li class=navigation-item><a class=navigation-link href=./Polski.html data-popover>Polski</a></li> </ul> </section> </nav> <section class=container> <h1 id=instruction>Instruction</h1> <h2 id=game-control>Game Control</h2> <p>We recommend to use gamepads but two players can use keyboard to play the game.</p> <h3 id=gamepad>Gamepad</h3> <p>Here is list of supported gamepads: <a href=https://guavaman.com/projects/rewired/docs/SupportedControllers.html>https://guavaman.com/projects/rewired/docs/SupportedControllers.html</a></p> <p>Two players can play the game simultaneously using single gamepad. </p> <p><img src=./images/Gamepad.png alt="Annotated Gamepad"></p> <p>To move between options you use Left or Right Stick.</p> <p>Confirm action is &quot;Action Button 01&quot; or &quot;D-Pad Down&quot;.</p> <p>To answer music challenge use LB or LT in case when you are using left part of gamepad; In case when you are using right part of the gamepad you use RT or RB.</p> <h3 id=keyboard>Keyboard</h3> <p>To move between options you use WSAD or Arrow Keys.</p> <p>Confirm action is &quot;E&quot; or &quot;Enter&quot;.</p> <p>To answer music challenge use WSAD keys or Arrow Keys.</p> <h2 id=music-file-preparation>Music File Preparation</h2> <p>You can prepare music files in two ways. Music has to be in mp3, aiff or wav sound format; Format is recognized by file extension.</p> <h3 id=way-1-file-names>Way 1 - file names</h3> <p>Prepare files names with music in such format: <code>name_of_the_artist-name_of_the_song</code>; For example: <code>Jennifer_Lopez-On_The_Floor.mp3</code>; Next, point folder with music files in game; </p> <h3 id=way-2-configuration-files>Way 2 - configuration files</h3> <p>If for some reason you can not change names of the files you can prepare special configuration files; This file will contain informations about songs. Configuration file can have any name and have to have extension <code>.jgsm</code>; For example: <code>SongManifest.jgms</code>.</p> <p>Example configuration file:</p> <pre><code>{
+  &quot;Songs&quot;: [
+  {
+    &quot;Path&quot;: &quot;C:\\Music\MyNameOfTheFile.hello&quot;,
+    &quot;SongName&quot;: &quot;S.O.S&quot;,
+    &quot;ArtistName&quot;: &quot;Abba&quot;,
+    &quot;Type&quot;: &quot;WAV&quot;
+  },
+  {
+    &quot;Path&quot;: &quot;C:\\Music\SubFolder\001-Lady_Gaga-Judas.mp3&quot;,
+    &quot;SongName&quot;: &quot;Judas&quot;,
+    &quot;ArtistName&quot;: &quot;Lady Gaga&quot;
+  }
+  ]
+}
+</code></pre><p><code>Path</code> - Path to file with music.</p> <p><code>SongName</code> - Name of the song or music.</p> <p><code>ArtistName</code> - Name of the artis, author or band. </p> <p><code>Type</code> - Music format is recognized based on file extension. Field <code>Type</code> is optional when file has extension <code>.mp3</code>, <code>.wav</code> or <code>.aiff</code>; In case when file does not have extension or extension is not <code>.mp3</code>, <code>.wav</code> or <code>.aiff</code> then this field is required. <code>Type</code> can have value <code>WAV</code>, <code>MP3</code> lub <code>AIFF</code>.</p> <p>What is more you can define <code>RootPath</code> for example:</p> <pre><code>{
+  &quot;RootPath&quot;: &quot;C:\\Music&quot;,
+  &quot;Songs&quot;: [
+  {
+    &quot;Path&quot;: &quot;MyNameOfTheFile.hello&quot;,
+    &quot;SongName&quot;: &quot;S.O.S&quot;,
+    &quot;ArtistName&quot;: &quot;Abba&quot;,
+    &quot;Type&quot;: &quot;WAV&quot;
+  },
+  {
+    &quot;Path&quot;: &quot;SubFolder\001-Lady_Gaga-Judas.mp3&quot;,
+    &quot;SongName&quot;: &quot;Judas&quot;,
+    &quot;ArtistName&quot;: &quot;Lady Gaga&quot;
+  }
+  ]
+}
+</code></pre><p>What results in possibility to define relative path in <code>Path</code> to path from field <code>RootPath</code>.</p> </section> </main> 
