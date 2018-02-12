@@ -53,7 +53,7 @@ const imagemin = require('imagemin');
 const imageminJpegtran = require('imagemin-jpegtran');
 const imageminPngquant = require('imagemin-pngquant');
 
-imagemin(['./src/main/images/*.{jpg,png}'], './target/website/images/', {
+imagemin(['./src/main/images/*.{jpg,png}'], targetDir + '/images/', {
     plugins: [
         imageminJpegtran(),
         imageminPngquant({quality: '80-90'})
